@@ -3,9 +3,9 @@
 #include "MotionMatchingEditor.h"
 
 
-#include "SlateGameResources.h"
+#include "Slate/SlateGameResources.h"
 
-#include "IPluginManager.h"
+#include "Interfaces/IPluginManager.h"
 
 TSharedPtr< FSlateStyleSet > FMotionMatchingStyle::StyleInstance = NULL;
 

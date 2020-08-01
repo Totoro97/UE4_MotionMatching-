@@ -15,6 +15,7 @@
 #include "Widgets/SWidget.h"
 
 #include "IDetailCustomization.h"
+#include "Editor/ContentBrowser/Public/ContentBrowserDelegates.h"
 
 
 

@@ -1,5 +1,6 @@
 
-#include "AddNewContextDialog.h"
+#include "MotionFieldEditor/AddNewContextDialog.h"
+#include "MotionFieldEditor/MotionFieldEditor.h"
 #include "MotionMatchingEditor.h"
 
 
@@ -31,7 +32,7 @@
 
 #include "MotionKey.h"
 
-#include "SScrollBox.h"
+#include "Widgets/Layout/SScrollBox.h"
 
 #include "Animation/AnimSequence.h"
 //////////////////////////////////////////
@@ -40,8 +41,8 @@
 
 #include "AssetThumbnail.h"
 
-#include "STextBlock.h"
-#include "SBox.h"
+#include "Widgets/Text/STextBlock.h"
+#include "Widgets/Layout/SBox.h"
 
 #define LOCTEXT_NAMESPACE "MotionMatchingEditor"
 
@@ -229,8 +230,7 @@ FReply SAddNewContextDialog::CancelClicked()
 
 void SAddNewContextDialog::CloseContainingWindow()
 {
-	FWidgetPath WidgetPath;
-	TSharedPtr<SWindow> ContainingWindow = FSlateApplication::Get().FindWidgetWindow(AsShared(), WidgetPath);
+	TSharedPtr<SWindow> ContainingWindow = FSlateApplication::Get().FindWidgetWindow(AsShared());
 	if (ContainingWindow.IsValid())
 	{
 		ContainingWindow->RequestDestroyWindow();

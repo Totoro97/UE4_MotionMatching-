@@ -13,7 +13,7 @@
 
 #include "AssetTypeActions_MotionField.h"
 
-#include "AddNewContextDialog.h"
+#include "MotionFieldEditor/AddNewContextDialog.h"
 
 static const FName MotionMatchingEditorTabName("MotionMatchingEditor");
 

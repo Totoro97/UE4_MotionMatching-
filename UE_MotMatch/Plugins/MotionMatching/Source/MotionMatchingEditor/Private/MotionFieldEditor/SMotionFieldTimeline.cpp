@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "SMotionFieldTimeline.h"
+#include "MotionFieldEditor/SMotionFieldTimeline.h"
 
 
 #include "Rendering/DrawElements.h"
@@ -23,7 +23,7 @@
 #include "MotionKey.h"
 #include "MotionFieldEditor/SMotionFieldTimelineTrack.h"
 
-#include "MotionFieldEditor.h"
+#include "MotionFieldEditor/MotionFieldEditor.h"
 
 #include "Animation/AnimSequence.h"
 
@@ -444,8 +444,7 @@ FReply SSetPropertiesDialog::CancelClicked()
 
 void SSetPropertiesDialog::CloseContainingWindow()
 {
-	FWidgetPath WidgetPath;
-	TSharedPtr<SWindow> ContainingWindow = FSlateApplication::Get().FindWidgetWindow(AsShared(), WidgetPath);
+	TSharedPtr<SWindow> ContainingWindow = FSlateApplication::Get().FindWidgetWindow(AsShared());
 	if (ContainingWindow.IsValid())
 	{
 		ContainingWindow->RequestDestroyWindow();

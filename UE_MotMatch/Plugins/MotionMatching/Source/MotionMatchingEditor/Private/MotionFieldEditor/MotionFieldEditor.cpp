@@ -1,13 +1,13 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "MotionFieldEditor.h"
+#include "MotionFieldEditor/MotionFieldEditor.h"
 
 #include "EditorViewportClient.h"
 #include "UObject/Package.h"
 #include "Modules/ModuleManager.h"
 #include "EditorStyleSet.h"
 #include "SSingleObjectDetailsPanel.h"
-
+#include "Subsystems/AssetEditorSubsystem.h"
 
 #include "SEditorViewport.h"
 #include "ScopedTransaction.h"
@@ -25,9 +25,9 @@
 
 #include "Animation/DebugSkelMeshComponent.h"
 
-#include "Classes/AnimPreviewInstance.h"
+#include "AnimPreviewInstance.h"
 
-#include "SContextList.h"
+#include "MotionFieldEditor/SContextList.h"
 
 #define LOCTEXT_NAMESPACE "MotionFieldEditor"
 
@@ -307,7 +307,8 @@ void FMotionFieldEditor::UnregisterTabSpawners(const TSharedRef<class FTabManage
 
 void FMotionFieldEditor::InitMotionFieldEditor(const EToolkitMode::Type Mode, const TSharedPtr< class IToolkitHost >& InitToolkitHost, class UMotionField* InitMotionField)
 {
-	FAssetEditorManager::Get().CloseOtherEditors(InitMotionField, this);
+	UAssetEditorSubsystem* AssetEditorSubsystem = GEditor->GetEditorSubsystem<UAssetEditorSubsystem>();
+	AssetEditorSubsystem->CloseOtherEditors(InitMotionField, this);
 	MotionFieldBeingEdited = InitMotionField;
 
 	CurrentExtractionContextIndex = INDEX_NONE;

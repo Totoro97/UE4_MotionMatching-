@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "SMotionFieldTimelineTrack.h"
+#include "MotionFieldEditor/SMotionFieldTimelineTrack.h"
 
 #include "Widgets/SBoxPanel.h"
 #include "Widgets/SOverlay.h"
@@ -27,7 +27,7 @@
 
 #include "Animation/AnimSequence.h"
 
-#include "MotionFieldEditor.h"
+#include "MotionFieldEditor/MotionFieldEditor.h"
 
 #define LOCTEXT_NAMESPACE "MotionFieldEditor"
 

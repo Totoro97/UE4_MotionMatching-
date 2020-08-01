@@ -8,7 +8,7 @@ public class UE_MotMatchEditorTarget : TargetRules
 	public UE_MotMatchEditorTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Editor;
-
+		DefaultBuildSettings = BuildSettingsVersion.V2;
 		ExtraModuleNames.AddRange( new string[] { "UE_MotMatch" } );
 	}
 }

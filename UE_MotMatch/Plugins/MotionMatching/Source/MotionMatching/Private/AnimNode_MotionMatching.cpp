@@ -7,7 +7,7 @@
 #include "AnimationRuntime.h"
 #include "MotCharacter.h"
 
-#include "DualQuat.h"
+#include "Math/DualQuat.h"
 
 
 bool FMotionAnim::ApplyTime(const float DT, const float InBlendTime, const bool Main)
